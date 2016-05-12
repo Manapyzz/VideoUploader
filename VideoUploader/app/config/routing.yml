@@ -1,0 +1,8 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+entity:
+    resource: "@EntityBundle/Resources/config/routing.yml"
+    prefix:   /
+

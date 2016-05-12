@@ -1,0 +1,34 @@
+EntityBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: EntityBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+
+    fields:
+        username:
+            type: string
+            length: 25
+            unique: true
+
+        password:
+            type: string
+            length: 64
+
+        email:
+            type: string
+            length: 60
+            unique: true
+
+        firstname:
+            type: string
+            length: 60
+
+        lastname:
+            type: string
+            length: 60
