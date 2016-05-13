@@ -1,0 +1,22 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+    Welcome Back {{ app.user.username }}!
+
+
+    <a href="/logout">Logout</a>
+
+    <br><br>
+
+    {% else %}
+
+        Welcome on videoUploader ! To share and see videos you can just <a href="/register">Sign Up For free !</a> <br>
+        If you already have an account just <a href="/login">Sign In</a>.<br><br>
+{% endif %}
+
+<div>
+    {% for item in videos %}
+        {{ item.title }}<br><br>
+        <img src="{{ item.previewImage }}"><br><br>
+        Posterd By {{ item.user.username }}<br><br>
+    {% endfor %}
+</div>

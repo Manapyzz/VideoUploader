@@ -7,6 +7,8 @@ use EntityBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 class RegistrationController extends Controller
 {
@@ -32,12 +34,21 @@ class RegistrationController extends Controller
 
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
-            
+            $this->authenticateUser($user);
+            return new RedirectResponse('/');
         }
 
         return $this->render(
             'UserBundle:Register:register.html.twig',
             array('form' => $form->createView())
         );
+    }
+
+    private function authenticateUser(User $user)
+    {
+        $providerKey = 'main'; // your firewall name
+        $token = new UsernamePasswordToken($user, null, $providerKey, $user->getRoles());
+
+        $this->container->get('security.context')->setToken($token);
     }
 }
