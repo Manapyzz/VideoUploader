@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new EntityBundle\EntityBundle(),
             new UserBundle\UserBundle(),
             new VideoBundle\VideoBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -3,7 +3,9 @@
 namespace VideoBundle\Controller;
 
 use EntityBundle\Entity\YoutubeVideo;
+use EntityBundle\Entity\DesktopVideo;
 use VideoBundle\Form\Type\VideoType;
+use VideoBundle\Form\Type\CustomVideoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bridge\Doctrine\Tests\Fixtures\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

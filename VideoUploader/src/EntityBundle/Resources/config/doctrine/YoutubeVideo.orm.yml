@@ -10,22 +10,22 @@ EntityBundle\Entity\YoutubeVideo:
                 strategy: AUTO
 
     fields:
-            title:
-                type: string
-                length: 30
-            description:
-                type: string
-                length: 400
-            previewImage:
-                type: string
-                length: 255
-            link:
-                type: string
-                length: 255
+        title:
+            type: string
+            length: 30
+        description:
+            type: string
+            length: 400
+        previewImage:
+            type: string
+            length: 255
+        link:
+            type: string
+            length: 255
 
-            youtubeId:
-                type: string
-                length: 255;
+        youtubeId:
+            type: string
+            length: 255;
 
     manyToOne:
         user:

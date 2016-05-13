@@ -68,5 +68,12 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+vich_uploader:
+    db_driver: orm # or mongodb or propel or phpcr
+
+    mappings:
+        video_file:
+            uri_prefix:         /videos/
+            upload_destination: %kernel.root_dir%/../web/assets/videos/
 
 
