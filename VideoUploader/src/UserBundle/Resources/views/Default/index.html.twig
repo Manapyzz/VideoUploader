@@ -1,1 +1,10 @@
-Hello World!
+
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+    Welcome Back {{ app.user.username }}!
+
+    {% else %}
+
+        Welcome on videoUploader
+{% endif %}
