@@ -16,7 +16,7 @@
 <div>
     {% for item in videos %}
         {{ item.title }}<br><br>
-        <img src="{{ item.previewImage }}"><br><br>
-        Posterd By {{ item.user.username }}<br><br>
+        <a href="/video/show/{{ item.youtubeId }}"><img src="{{ item.previewImage }}"></a><br><br>
+        Posted By {{ item.user.username }}<br><br>
     {% endfor %}
 </div>

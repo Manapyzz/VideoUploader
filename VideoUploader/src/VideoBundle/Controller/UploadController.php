@@ -42,7 +42,7 @@ class UploadController extends Controller {
         }
 
         return $this->render(
-            'VideoBundle:Uploader:youtubeVideo.html.twig',
+            'VideoBundle:Uploader:youtubeUploader.html.twig',
             array('form' => $form->createView())
         );
     }
