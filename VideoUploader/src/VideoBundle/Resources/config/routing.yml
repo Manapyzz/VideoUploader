@@ -1,6 +1,7 @@
-video_upload:
+hello_world:
     path: /upload
     defaults: { _controller: VideoBundle:Upload:video}
+
 
 video_upload_customVideo:
     path: /customupload

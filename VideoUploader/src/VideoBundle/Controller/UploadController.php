@@ -3,17 +3,17 @@
 namespace VideoBundle\Controller;
 
 use EntityBundle\Entity\YoutubeVideo;
-use EntityBundle\Entity\DesktopVideo;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use VideoBundle\Form\Type\VideoType;
-use VideoBundle\Form\Type\CustomVideoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bridge\Doctrine\Tests\Fixtures\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class UploadController extends Controller {
 
+class UploadController extends Controller
+{
     public function videoAction(Request $request)
     {
         // 1) build the form
@@ -33,19 +33,18 @@ class UploadController extends Controller {
             $video->setYoutubeId($youtube_id);
             $video->setLink($videoEmbed);
             $video->setPreviewImage('http://img.youtube.com/vi/'.$youtube_id.'/0.jpg');
-
             // 4) save the User!
             $em = $this->getDoctrine()->getManager();
             $em->persist($video);
             $em->flush();
-
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
+            return new RedirectResponse('/');
         }
-
         return $this->render(
             'VideoBundle:Uploader:youtubeUploader.html.twig',
             array('form' => $form->createView())
         );
     }
+
 }

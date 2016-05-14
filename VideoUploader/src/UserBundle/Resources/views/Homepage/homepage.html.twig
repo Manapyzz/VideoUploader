@@ -10,9 +10,10 @@
 
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-    Welcome Back {{ app.user.username }}!
+    Welcome Back {{ app.user.username }}!<br><br>
 
-
+    <a href="/upload">Upload a Video From Youtube</a><br>
+    <a href="/customupload">Upload a Video From my Computer</a><br>
     <a href="/logout">Logout</a>
 
     <br><br>
