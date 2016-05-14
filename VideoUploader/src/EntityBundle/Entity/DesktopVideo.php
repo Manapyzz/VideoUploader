@@ -203,4 +203,90 @@ class DesktopVideo
     {
         return $this->videoName;
     }
+    /**
+     * @var \EntityBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \EntityBundle\Entity\User $user
+     * @return DesktopVideo
+     */
+    public function setUser(\EntityBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \EntityBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    /**
+     * @var string
+     * 
+     * @Vich\UploadableField(mapping="preview_file", fileNameProperty="previewImageName ")
+     */
+    private $previewFile;
+
+    /**
+     * @var string
+     */
+    private $previewImageName;
+
+
+    /**
+     * Set previewFile
+     *
+     * @param string $previewFile
+     * @return DesktopVideo
+     */
+    public function setPreviewFile($previewFile)
+    {
+        $this->previewFile = $previewFile;
+
+        return $this;
+    }
+
+    /**
+     * Get previewFile
+     *
+     * @return string 
+     */
+    public function getPreviewFile()
+    {
+        return $this->previewFile;
+    }
+
+    /**
+     * Set previewImageName
+     *
+     * @param string $previewImageName
+     * @return DesktopVideo
+     */
+    public function setPreviewImageName($previewImageName)
+    {
+        $this->previewImageName = $previewImageName;
+
+        return $this;
+    }
+
+    /**
+     * Get previewImageName
+     *
+     * @return string 
+     */
+    public function getPreviewImageName()
+    {
+        return $this->previewImageName;
+    }
 }

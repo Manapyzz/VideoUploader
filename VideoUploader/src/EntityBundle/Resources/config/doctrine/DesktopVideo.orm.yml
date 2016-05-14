@@ -24,4 +24,19 @@ EntityBundle\Entity\DesktopVideo:
         videoName :
             type : string
             length : 255
+
+        previewFile :
+             - File:
+                   maxSize: 6000000000000
+        previewImageName :
+            type : string
+            length : 255
+
+    manyToOne:
+        user:
+            targetEntity: EntityBundle\Entity\User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+
     lifecycleCallbacks: {  }

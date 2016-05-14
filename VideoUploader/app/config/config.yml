@@ -76,4 +76,7 @@ vich_uploader:
             uri_prefix:         /videos/
             upload_destination: %kernel.root_dir%/../web/assets/videos/
 
+        preview_file:
+            uri_prefix:         /preview/
+            upload_destination: %kernel.root_dir%/../web/assets/preview/
 

@@ -17,8 +17,8 @@ class CustomUploadController extends Controller {
     {
         // 1) build the form
         $customVideo = new DesktopVideo();
+        $customVideo->setUser($this->getUser());
         $form = $this->createForm(CustomVideoType::class, $customVideo);
-        var_dump($customVideo);
 
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);

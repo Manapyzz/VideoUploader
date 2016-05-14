@@ -14,7 +14,8 @@ class CustomVideoType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('description', TextType::class)
-            ->add('videoFile', 'file');
+            ->add('videoFile', 'file')
+            ->add('previewFile', 'file');
     }
 
     public function configureOptions(OptionsResolver $resolver)

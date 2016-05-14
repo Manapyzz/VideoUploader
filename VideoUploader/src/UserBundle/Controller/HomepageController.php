@@ -14,8 +14,11 @@ class HomepageController extends Controller
         $videos = $em->getRepository('EntityBundle:YoutubeVideo')
             ->findAll();
 
+        $customvideos  = $em->getRepository('EntityBundle:DesktopVideo')
+            ->findAll();
+
         return $this->render(
             'UserBundle:Homepage:homepage.html.twig',
-            array('videos' => $videos));
+            array('videos' => $videos, 'video' => $customvideos ));
     }
 }
