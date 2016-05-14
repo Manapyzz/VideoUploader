@@ -28,6 +28,8 @@ class CustomUploadController extends Controller {
             $em = $this->getDoctrine()->getManager();
             $em->persist($customVideo);
             $em->flush();
+
+            return new RedirectResponse('/');
         }
 
         return $this->render(
